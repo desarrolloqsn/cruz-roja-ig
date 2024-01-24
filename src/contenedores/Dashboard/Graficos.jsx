@@ -73,7 +73,7 @@ export default function Graficos() {
        </div>
 
 
-      <div className='columna'>
+      {/* <div className='columna'>
       
         <div className='grafico-mediano'>
           <NubePalabras />
@@ -85,9 +85,9 @@ export default function Graficos() {
        <NubePalabrasTrigrama/>
         </div>
        
-      </div>
+      </div> */}
 
-      <div className='columna'>
+      {/* <div className='columna'>
         <div className='grafico-mediano'>
           <GrafoPalabras/>
         </div>
@@ -99,7 +99,7 @@ export default function Graficos() {
        <GrafoTrigramas/>
        </div> 
 
-       </div>
+       </div> */}
 
       
 

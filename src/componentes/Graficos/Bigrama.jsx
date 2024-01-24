@@ -11,7 +11,7 @@ import jsonFechas from './../../datos/rango_fechas.json'
 export default function NubePalabrasBigrama() {
   const [fechas, setFechas] = useState(jsonFechas.fechas);
   const [filtroFecha, setFiltroFecha] = useState(fechas[0]);
-  const series = Object.keys(dataNubeBi[filtroFecha]);
+  const series = dataNubeBi[filtroFecha] ? Object.keys(dataNubeBi[filtroFecha]) : [];
   const [filtroSerie, setFiltroSerie] = useState(series[0]); // Estado para almacenar la serie seleccionada
   const dataGrafico = dataNubeBi[filtroFecha][filtroSerie];
 
@@ -29,12 +29,11 @@ export default function NubePalabrasBigrama() {
       {fecha.slice(0, 10)}
     </Select.Option>
   ));
-
-  const opcionesSeries = Object.keys(dataNubeBi[filtroFecha]).map((serie, index) => (
+  const opcionesSeries = dataNubeBi[filtroFecha] ? Object.keys(dataNubeBi[filtroFecha]).map((serie, index) => (
     <Select.Option key={index} value={serie}>
       {serie}
     </Select.Option>
-  ));
+  )) : [];
 
   const config = {
     data: dataGrafico,
